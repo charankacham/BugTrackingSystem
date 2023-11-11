@@ -260,6 +260,7 @@ else
         if $cygwin; then
           javaClass=`cygpath --path --windows "$javaClass"`
         fi
+        
         if [ -e "$javaClass" ]; then
             if [ ! -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then
                 if [ "$MVNW_VERBOSE" = true ]; then

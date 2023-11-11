@@ -1,18 +1,18 @@
-package com.bugtrackingsystem.implementation;
+package com.bugtrackingsystem.serviceimplementation;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bugtrackingsystem.dto.DeveloperDTO;
+import com.bugtrackingsystem.entity.Developer;
+import com.bugtrackingsystem.entity.Project;
+import com.bugtrackingsystem.entity.User;
 import com.bugtrackingsystem.exceptions.ResourceNotFoundException;
-import com.bugtrackingsystem.models.Developer;
-import com.bugtrackingsystem.models.Project;
-import com.bugtrackingsystem.models.User;
 import com.bugtrackingsystem.repository.DeveloperRepository;
 import com.bugtrackingsystem.repository.ProjectRepository;
 import com.bugtrackingsystem.repository.UserRepository;
-import com.bugtrackingsystem.services.IDeveloperService;
+import com.bugtrackingsystem.service.IDeveloperService;
 
 import java.util.List;
 @Service

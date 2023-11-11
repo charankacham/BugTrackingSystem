@@ -1,12 +1,12 @@
-package com.bugtrackingsystem.services;
+package com.bugtrackingsystem.service;
 
 import org.springframework.stereotype.Service;
 
 import com.bugtrackingsystem.dto.BugDTO;
 import com.bugtrackingsystem.dto.UpdateBugDTO;
-import com.bugtrackingsystem.enums.BugStatusEnum;
-import com.bugtrackingsystem.enums.SeverityEnum;
-import com.bugtrackingsystem.models.Bug;
+import com.bugtrackingsystem.entity.Bug;
+import com.bugtrackingsystem.util.BugStatusEnum;
+import com.bugtrackingsystem.util.SeverityEnum;
 
 import java.time.LocalDate;
 import java.util.List;

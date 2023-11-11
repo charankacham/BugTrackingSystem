@@ -1,8 +1,8 @@
 package com.bugtrackingsystem.dto;
 
-import com.bugtrackingsystem.enums.BugStatusEnum;
-import com.bugtrackingsystem.implementation.IBugServiceImplementation;
-import com.bugtrackingsystem.models.Bug;
+import com.bugtrackingsystem.entity.Bug;
+import com.bugtrackingsystem.serviceimplementation.IBugServiceImplementation;
+import com.bugtrackingsystem.util.BugStatusEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;

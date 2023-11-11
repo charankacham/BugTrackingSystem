@@ -7,9 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.bugtrackingsystem.dto.BasicDTO;
 import com.bugtrackingsystem.dto.UserDTO;
-import com.bugtrackingsystem.enums.UserRoleEnum;
-import com.bugtrackingsystem.implementation.IUserServiceImplementation;
-import com.bugtrackingsystem.models.User;
+import com.bugtrackingsystem.entity.User;
+import com.bugtrackingsystem.serviceimplementation.IUserServiceImplementation;
+import com.bugtrackingsystem.util.UserRoleEnum;
+
 import java.util.List;
 @RestController
 @CrossOrigin

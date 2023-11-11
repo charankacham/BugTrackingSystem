@@ -1,7 +1,7 @@
 package com.bugtrackingsystem.dto;
 
-import com.bugtrackingsystem.enums.BugStatusEnum;
-import com.bugtrackingsystem.enums.SeverityEnum;
+import com.bugtrackingsystem.util.BugStatusEnum;
+import com.bugtrackingsystem.util.SeverityEnum;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

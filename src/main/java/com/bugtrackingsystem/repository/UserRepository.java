@@ -3,8 +3,8 @@ package com.bugtrackingsystem.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bugtrackingsystem.enums.UserRoleEnum;
-import com.bugtrackingsystem.models.User;
+import com.bugtrackingsystem.entity.User;
+import com.bugtrackingsystem.util.UserRoleEnum;
 
 import java.util.List;
 import java.util.Optional;

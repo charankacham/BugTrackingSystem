@@ -1,20 +1,20 @@
-package com.bugtrackingsystem.implementation;
+package com.bugtrackingsystem.serviceimplementation;
 
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bugtrackingsystem.enums.UserRoleEnum;
+import com.bugtrackingsystem.entity.Developer;
+import com.bugtrackingsystem.entity.TestEngineer;
+import com.bugtrackingsystem.entity.User;
 import com.bugtrackingsystem.exceptions.ResourceAlreadyExistException;
 import com.bugtrackingsystem.exceptions.ResourceNotFoundException;
-import com.bugtrackingsystem.models.Developer;
-import com.bugtrackingsystem.models.TestEngineer;
-import com.bugtrackingsystem.models.User;
 import com.bugtrackingsystem.repository.DeveloperRepository;
 import com.bugtrackingsystem.repository.TestEngineerRepository;
 import com.bugtrackingsystem.repository.UserRepository;
-import com.bugtrackingsystem.services.IUserService;
+import com.bugtrackingsystem.service.IUserService;
+import com.bugtrackingsystem.util.UserRoleEnum;
 
 import javax.transaction.Transactional;
 import java.util.List;

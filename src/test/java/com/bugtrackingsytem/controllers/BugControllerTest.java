@@ -1,13 +1,13 @@
 package com.bugtrackingsytem.controllers;
 
 import com.bugtrackingsystem.dto.BugDTO;
-import com.bugtrackingsystem.enums.BugStatusEnum;
-import com.bugtrackingsystem.enums.SeverityEnum;
-import com.bugtrackingsystem.enums.UserRoleEnum;
-import com.bugtrackingsystem.implementation.IBugServiceImplementation;
-import com.bugtrackingsystem.models.Bug;
-import com.bugtrackingsystem.models.Project;
-import com.bugtrackingsystem.models.User;
+import com.bugtrackingsystem.entity.Bug;
+import com.bugtrackingsystem.entity.Project;
+import com.bugtrackingsystem.entity.User;
+import com.bugtrackingsystem.serviceimplementation.IBugServiceImplementation;
+import com.bugtrackingsystem.util.BugStatusEnum;
+import com.bugtrackingsystem.util.SeverityEnum;
+import com.bugtrackingsystem.util.UserRoleEnum;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

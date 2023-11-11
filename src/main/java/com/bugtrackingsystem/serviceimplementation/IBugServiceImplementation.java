@@ -1,4 +1,4 @@
-package com.bugtrackingsystem.implementation;
+package com.bugtrackingsystem.serviceimplementation;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +7,13 @@ import org.springframework.stereotype.Service;
 import com.bugtrackingsystem.dto.BugDTO;
 import com.bugtrackingsystem.dto.SearchDTO;
 import com.bugtrackingsystem.dto.UpdateBugDTO;
-import com.bugtrackingsystem.enums.BugStatusEnum;
-import com.bugtrackingsystem.enums.SeverityEnum;
+import com.bugtrackingsystem.entity.*;
 import com.bugtrackingsystem.exceptions.ResourceNotFoundException;
-import com.bugtrackingsystem.models.*;
 import com.bugtrackingsystem.repository.*;
-import com.bugtrackingsystem.services.IBugService;
+import com.bugtrackingsystem.service.IBugService;
+import com.bugtrackingsystem.util.BugStatusEnum;
+import com.bugtrackingsystem.util.SeverityEnum;
+
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.List;

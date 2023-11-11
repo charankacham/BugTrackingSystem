@@ -1,12 +1,12 @@
-package com.bugtrackingsystem.services;
+package com.bugtrackingsystem.service;
 
 
 
 import org.springframework.stereotype.Service;
 
 import com.bugtrackingsystem.dto.DeveloperDTO;
-import com.bugtrackingsystem.models.Developer;
-import com.bugtrackingsystem.models.Project;
+import com.bugtrackingsystem.entity.Developer;
+import com.bugtrackingsystem.entity.Project;
 
 import java.util.List;
 

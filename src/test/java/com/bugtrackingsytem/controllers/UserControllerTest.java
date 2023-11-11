@@ -1,10 +1,10 @@
 package com.bugtrackingsytem.controllers;
 
 import com.bugtrackingsystem.dto.UserDTO;
-import com.bugtrackingsystem.enums.UserRoleEnum;
+import com.bugtrackingsystem.entity.User;
 import com.bugtrackingsystem.exceptions.ResourceNotFoundException;
-import com.bugtrackingsystem.implementation.IUserServiceImplementation;
-import com.bugtrackingsystem.models.User;
+import com.bugtrackingsystem.serviceimplementation.IUserServiceImplementation;
+import com.bugtrackingsystem.util.UserRoleEnum;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

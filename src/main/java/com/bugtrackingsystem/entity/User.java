@@ -1,6 +1,6 @@
-package com.bugtrackingsystem.models;
+package com.bugtrackingsystem.entity;
 
-import com.bugtrackingsystem.enums.UserRoleEnum;
+import com.bugtrackingsystem.util.UserRoleEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;

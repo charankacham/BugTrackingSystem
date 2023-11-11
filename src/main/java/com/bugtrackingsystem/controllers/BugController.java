@@ -9,9 +9,9 @@ import com.bugtrackingsystem.dto.BasicDTO;
 import com.bugtrackingsystem.dto.BugDTO;
 import com.bugtrackingsystem.dto.SearchDTO;
 import com.bugtrackingsystem.dto.UpdateBugDTO;
-import com.bugtrackingsystem.implementation.IBugServiceImplementation;
-import com.bugtrackingsystem.models.Bug;
-import com.bugtrackingsystem.models.BugHistory;
+import com.bugtrackingsystem.entity.Bug;
+import com.bugtrackingsystem.entity.BugHistory;
+import com.bugtrackingsystem.serviceimplementation.IBugServiceImplementation;
 
 import java.util.List;
 

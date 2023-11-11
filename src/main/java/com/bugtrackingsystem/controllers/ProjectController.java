@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.bugtrackingsystem.dto.BasicDTO;
-import com.bugtrackingsystem.implementation.IProjectServiceImplementation;
-import com.bugtrackingsystem.models.Project;
+import com.bugtrackingsystem.entity.Project;
+import com.bugtrackingsystem.serviceimplementation.IProjectServiceImplementation;
 
 import java.util.List;
 

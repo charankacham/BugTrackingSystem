@@ -4,10 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 
-import com.bugtrackingsystem.enums.BugStatusEnum;
-import com.bugtrackingsystem.enums.SeverityEnum;
-import com.bugtrackingsystem.models.Bug;
-import com.bugtrackingsystem.models.User;
+import com.bugtrackingsystem.entity.Bug;
+import com.bugtrackingsystem.entity.User;
+import com.bugtrackingsystem.util.BugStatusEnum;
+import com.bugtrackingsystem.util.SeverityEnum;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,12 +1,12 @@
-package com.bugtrackingsystem.implementation;
+package com.bugtrackingsystem.serviceimplementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.bugtrackingsystem.entity.Project;
+import com.bugtrackingsystem.entity.TestEngineer;
 import com.bugtrackingsystem.exceptions.ResourceNotFoundException;
-import com.bugtrackingsystem.models.Project;
-import com.bugtrackingsystem.models.TestEngineer;
 import com.bugtrackingsystem.repository.TestEngineerRepository;
-import com.bugtrackingsystem.services.ITestEngineerService;
+import com.bugtrackingsystem.service.ITestEngineerService;
 
 import java.util.List;
 

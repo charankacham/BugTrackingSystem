@@ -1,10 +1,10 @@
-package com.bugtrackingsystem.services;
+package com.bugtrackingsystem.service;
 
 
 import org.springframework.stereotype.Service;
 
 import com.bugtrackingsystem.dto.UserDTO;
-import com.bugtrackingsystem.models.User;
+import com.bugtrackingsystem.entity.User;
 
 @Service
 public interface IUserService {

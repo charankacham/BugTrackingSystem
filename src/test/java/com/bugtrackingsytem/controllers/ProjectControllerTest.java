@@ -1,7 +1,7 @@
 package com.bugtrackingsytem.controllers;
 
-import com.bugtrackingsystem.implementation.IProjectServiceImplementation;
-import com.bugtrackingsystem.models.Project;
+import com.bugtrackingsystem.entity.Project;
+import com.bugtrackingsystem.serviceimplementation.IProjectServiceImplementation;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

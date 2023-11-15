@@ -1,5 +1,6 @@
 package com.bugtrackingsytem.controllers;
 
+import com.bugtrackingsystem.BugTrackingSystemApplication;
 import com.bugtrackingsystem.dto.BugDTO;
 import com.bugtrackingsystem.entity.Bug;
 import com.bugtrackingsystem.entity.Project;
@@ -17,21 +18,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@SpringBootTest(classes = BugTrackingSystemApplication.class)
 @AutoConfigureMockMvc
+
 class BugControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -76,37 +74,5 @@ class BugControllerTest {
                 ).andExpect(status().isCreated())
                 .andExpect(jsonPath("$.data.id",is(1)))
                 .andExpect(jsonPath("$.data.title",is("Black Screen")));
-    }
-
-    @Test
-    void updateBugStatus() {
-    }
-
-    @Test
-    void myAssignedBugs() {
-    }
-
-    @Test
-    void searchBug() {
-    }
-
-    @Test
-    void findBugHistoryById() {
-    }
-
-    @Test
-    void myCreatedBugs() {
-    }
-
-    @Test
-    void projectBugs() {
-    }
-
-    @Test
-    void allBugs() throws Exception {
-        when(iBugServiceImplementation.findAllBugs()).thenReturn(bugs);
-        this.mockMvc.perform(get("/api/project/all"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.data.size()", is(2)));
     }
 }

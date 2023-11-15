@@ -1,5 +1,6 @@
 package com.bugtrackingsytem.controllers;
 
+import com.bugtrackingsystem.BugTrackingSystemApplication;
 import com.bugtrackingsystem.dto.UserDTO;
 import com.bugtrackingsystem.entity.User;
 import com.bugtrackingsystem.exceptions.ResourceNotFoundException;
@@ -14,19 +15,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest
+@SpringBootTest(classes = BugTrackingSystemApplication.class)
 @AutoConfigureMockMvc
 class UserControllerTest {
 
@@ -54,7 +52,7 @@ class UserControllerTest {
 
         when(iUserServiceImplementation.registerUser(userDto.toUserObject())).thenReturn(user);
 
-        this.mockMvc.perform(post("/api/auth/register")
+        this.mockMvc.perform(post("/api/user/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(gson.toJson(userDto))
                 ).andExpect(status().isCreated())
@@ -70,9 +68,9 @@ class UserControllerTest {
         when(iUserServiceImplementation.signIn(userDTOWrong.toUserObject())).thenThrow(new ResourceNotFoundException());
 
         //Should return 200
-        this.mockMvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON).content(gson.toJson(userDTO))).andDo(print()).andExpect(status().isOk());
+        this.mockMvc.perform(post("/api/user/login").contentType(MediaType.APPLICATION_JSON).content(gson.toJson(userDTO))).andDo(print()).andExpect(status().isOk());
         //Should return 404
-        this.mockMvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON).content(gson.toJson(userDTOWrong))).andDo(print()).andExpect(status().isNotFound());
+        this.mockMvc.perform(post("/api/user/login").contentType(MediaType.APPLICATION_JSON).content(gson.toJson(userDTOWrong))).andDo(print()).andExpect(status().isNotFound());
     }
 
     @Test
@@ -80,7 +78,7 @@ class UserControllerTest {
         userList.remove(2);
         when(iUserServiceImplementation.findOtherUsers(3L)).thenReturn(userList);
 
-        this.mockMvc.perform(get("/api/auth/otherUsers/3"))
+        this.mockMvc.perform(get("/api/user/otherUsers/3"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.size()", is(2)));
     }
@@ -89,7 +87,7 @@ class UserControllerTest {
     void findAllByRole() throws Exception {
         userList.removeIf(item-> !item.getRole().equals(UserRoleEnum.TESTER));
         when(iUserServiceImplementation.findAllByRole(UserRoleEnum.TESTER)).thenReturn(userList);
-        this.mockMvc.perform(get("/api/auth/allByRole/TESTER"))
+        this.mockMvc.perform(get("/api/user/allByRole/TESTER"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.size()", is(1)));
     }
@@ -97,7 +95,7 @@ class UserControllerTest {
     @Test
     void findAllUsers() throws Exception {
         when(iUserServiceImplementation.findAll()).thenReturn(userList);
-        this.mockMvc.perform(get("/api/auth/allUsers"))
+        this.mockMvc.perform(get("/api/user/allUsers"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.size()", is(3)));
     }

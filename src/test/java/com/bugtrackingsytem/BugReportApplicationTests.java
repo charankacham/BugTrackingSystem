@@ -3,7 +3,10 @@ package com.bugtrackingsytem;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import com.bugtrackingsystem.BugTrackingSystemApplication;
+
+//@SpringBootTest
+@SpringBootTest(classes = BugTrackingSystemApplication.class)
 class BugReportApplicationTests {
 
 	@Test

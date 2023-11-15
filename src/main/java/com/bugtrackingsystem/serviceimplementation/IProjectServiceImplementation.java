@@ -1,9 +1,6 @@
 package com.bugtrackingsystem.serviceimplementation;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.bugtrackingsystem.dto.ProjectDTO;
 import com.bugtrackingsystem.entity.Developer;
 import com.bugtrackingsystem.entity.Project;
 import com.bugtrackingsystem.entity.TestEngineer;

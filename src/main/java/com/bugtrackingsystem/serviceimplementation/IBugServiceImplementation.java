@@ -3,7 +3,6 @@ package com.bugtrackingsystem.serviceimplementation;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.bugtrackingsystem.dto.BugDTO;
 import com.bugtrackingsystem.dto.SearchDTO;
 import com.bugtrackingsystem.dto.UpdateBugDTO;
@@ -13,7 +12,6 @@ import com.bugtrackingsystem.repository.*;
 import com.bugtrackingsystem.service.IBugService;
 import com.bugtrackingsystem.util.BugStatusEnum;
 import com.bugtrackingsystem.util.SeverityEnum;
-
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.List;
@@ -32,6 +30,7 @@ public class IBugServiceImplementation  implements IBugService{
     private BugHistoryRepository bugHistoryRepository;
     @Autowired
     private DeveloperRepository developerRepository;
+    
     @Transactional
     public Bug createBug(@NotNull BugDTO bugDto){
         var bug = bugDto.toBugObject();
@@ -45,7 +44,7 @@ public class IBugServiceImplementation  implements IBugService{
         bugHistoryRepository.save(new BugHistory(null, bug, bug.getBugStatus(), bug.getComments(), bug.getCreatedOn()));
         return bug;
     }
-
+  
     @Transactional
     public Bug updateBug(@NotNull UpdateBugDTO updateBugDTO){
         Bug bug = updateBugDTO.toBugObject(this);
@@ -111,7 +110,6 @@ public class IBugServiceImplementation  implements IBugService{
                             item.getCreatedOn().toLocalDate().isBefore(endDate.plusDays(1L));
                 }).collect(Collectors.toList());
     }
-
     @Override
     public List<Bug> findBugsCreatedByTestEngineer(Long testEngId) {
         return bugRepository.findByCreatedBy_Id(testEngId);

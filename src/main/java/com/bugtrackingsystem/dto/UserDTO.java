@@ -2,7 +2,6 @@ package com.bugtrackingsystem.dto;
 
 import com.bugtrackingsystem.entity.User;
 import com.bugtrackingsystem.util.UserRoleEnum;
-
 import lombok.*;
 
 @NoArgsConstructor

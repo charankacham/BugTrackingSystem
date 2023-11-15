@@ -1,10 +1,7 @@
 package com.bugtrackingsystem.serviceimplementation;
 
-
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.bugtrackingsystem.entity.Developer;
 import com.bugtrackingsystem.entity.TestEngineer;
 import com.bugtrackingsystem.entity.User;
@@ -15,13 +12,10 @@ import com.bugtrackingsystem.repository.TestEngineerRepository;
 import com.bugtrackingsystem.repository.UserRepository;
 import com.bugtrackingsystem.service.IUserService;
 import com.bugtrackingsystem.util.UserRoleEnum;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
-
 @Service
-@Slf4j
 public class IUserServiceImplementation implements IUserService {
     @Autowired
     UserRepository userRepository;

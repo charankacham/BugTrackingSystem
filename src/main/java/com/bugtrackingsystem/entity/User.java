@@ -1,13 +1,10 @@
 package com.bugtrackingsystem.entity;
-
 import com.bugtrackingsystem.util.UserRoleEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity @NoArgsConstructor @AllArgsConstructor @Data
 @Table(name="users_table")

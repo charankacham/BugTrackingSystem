@@ -1,5 +1,6 @@
 package com.bugtrackingsytem.controllers;
 
+import com.bugtrackingsystem.BugTrackingSystemApplication;
 import com.bugtrackingsystem.entity.Project;
 import com.bugtrackingsystem.serviceimplementation.IProjectServiceImplementation;
 import com.google.gson.Gson;
@@ -11,19 +12,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-@SpringBootTest
+@SpringBootTest(classes = BugTrackingSystemApplication.class)
 @AutoConfigureMockMvc
 class ProjectControllerTest {
 
